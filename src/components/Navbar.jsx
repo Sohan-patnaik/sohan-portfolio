@@ -7,7 +7,6 @@ export default function Navbar({ theme, onToggleTheme, onOpenPalette, onNavigate
   return (
     <nav className="navbar">
       <div className="navbar-inner">
-        {/* Logo */}
         <button className="navbar-logo" onClick={() => onNavigate("home")}>
           <span className="logo-bracket">[</span>
           <span className="logo-text">SP</span>
@@ -15,27 +14,22 @@ export default function Navbar({ theme, onToggleTheme, onOpenPalette, onNavigate
           <span className="logo-dot" />
         </button>
 
-        {/* Center links */}
         <div className="navbar-links">
           <button onClick={() => onNavigate("projects")}>Projects</button>
           <button onClick={() => onNavigate("about")}>About</button>
           <button onClick={() => onNavigate("contact")}>Contact</button>
         </div>
 
-        {/* Right actions */}
         <div className="navbar-actions">
-          {/* Deployment status */}
           <button className="status-pill" title="System status">
             <span className="dot-live" />
             <span className="mono" style={{ fontSize: 11 }}>Operational</span>
           </button>
 
-          {/* Command palette */}
           <button className="cmd-btn" onClick={onOpenPalette} title="Command palette (⌘K)">
             <span className="mono" style={{ fontSize: 11 }}>⌘K</span>
           </button>
 
-          {/* Theme toggle */}
           <button className="theme-btn" onClick={onToggleTheme} title="Toggle theme">
             {theme === "dark" ? (
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -56,14 +50,12 @@ export default function Navbar({ theme, onToggleTheme, onOpenPalette, onNavigate
             )}
           </button>
 
-          {/* Mobile menu */}
           <button className="mobile-menu-btn" onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? "✕" : "☰"}
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <div className="mobile-menu">
           <button onClick={() => { onNavigate("projects"); setMobileOpen(false); }}>Projects</button>

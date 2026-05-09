@@ -7,8 +7,8 @@ const COMMANDS = [
   { id: "projects", label: "View Projects", icon: "⚡", category: "Navigation" },
   { id: "about", label: "About Me", icon: "👤", category: "Navigation" },
   { id: "theme", label: "Toggle Theme", icon: "🌙", category: "Settings" },
-  { id: "github", label: "Open GitHub", icon: "🐙", category: "Links", href: "https://github.com/sohanpatnaik" },
-  { id: "linkedin", label: "Open LinkedIn", icon: "💼", category: "Links", href: "https://linkedin.com/in/sohanpatnaik" },
+  { id: "github", label: "Open GitHub", icon: "🐙", category: "Links", href: "https://github.com/Sohan-patnaik" },
+  { id: "linkedin", label: "Open LinkedIn", icon: "💼", category: "Links", href: "https://www.linkedin.com/in/sohan-patnaik-1bba87295" },
   ...projects.map((p) => ({
     id: `project-${p.id}`,
     label: `View: ${p.title}`,
@@ -82,7 +82,6 @@ export default function CommandPalette({ open, onClose, onNavigate, onToggleThem
         onClick={(e) => e.stopPropagation()}
         onKeyDown={handleKey}
       >
-        {/* Input */}
         <div className="palette-input-row">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" strokeWidth="2">
             <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -98,7 +97,6 @@ export default function CommandPalette({ open, onClose, onNavigate, onToggleThem
           <span className="mono palette-esc" onClick={onClose}>ESC</span>
         </div>
 
-        {/* Results */}
         <div className="palette-results">
           {filtered.length === 0 ? (
             <div className="palette-empty mono">No results for "{query}"</div>

@@ -7,19 +7,16 @@ export default function Hero({ onNavigate }) {
 
   return (
     <section className="hero">
-      {/* Animated grid background */}
       <div className="hero-grid" aria-hidden="true">
         <div className="grid-lines" />
         <div className="grid-glow" />
         <div className="grid-scanline" />
       </div>
 
-      {/* Floating orbs */}
       <div className="orb orb-1" aria-hidden="true" />
       <div className="orb orb-2" aria-hidden="true" />
 
       <div className="hero-content container">
-        {/* Currently building pill */}
         <div className="currently-building" style={{ animationDelay: "0ms" }}>
           <span className="dot-live" />
           <span className="mono" style={{ fontSize: 11, color: "var(--text-muted)" }}>
@@ -30,24 +27,20 @@ export default function Hero({ onNavigate }) {
           </span>
         </div>
 
-        {/* Name */}
         <h1 className="hero-name" style={{ animationDelay: "100ms" }}>
           {personal.name}
         </h1>
 
-        {/* Role + typing */}
         <div className="hero-role" style={{ animationDelay: "200ms" }}>
           <span className="role-label mono">&gt; </span>
           <span className="typed-text">{typed}</span>
           <span className="cursor" />
         </div>
 
-        {/* Tagline */}
         <p className="hero-tagline" style={{ animationDelay: "300ms" }}>
           {personal.bio}
         </p>
 
-        {/* CTA row */}
         <div className="hero-cta" style={{ animationDelay: "400ms" }}>
           <button
             className="btn btn-primary hero-btn-main"
@@ -83,10 +76,9 @@ export default function Hero({ onNavigate }) {
           </a>
         </div>
 
-        {/* Stats row */}
         <div className="hero-stats" style={{ animationDelay: "500ms" }}>
           <div className="hero-stat">
-            <span className="hero-stat-val mono">4+</span>
+            <span className="hero-stat-val mono">3+</span>
             <span className="hero-stat-lbl">AI Projects</span>
           </div>
           <div className="hero-stat-divider" />
@@ -101,13 +93,12 @@ export default function Hero({ onNavigate }) {
           </div>
           <div className="hero-stat-divider" />
           <div className="hero-stat">
-            <span className="hero-stat-val mono">IIT Madras</span>
+            <span className="hero-stat-val mono">IITM Pravartak</span>
             <span className="hero-stat-lbl">Certified</span>
           </div>
         </div>
       </div>
 
-      {/* Scroll hint */}
       <div className="scroll-hint" aria-hidden="true">
         <div className="scroll-line" />
         <span className="mono" style={{ fontSize: 10, color: "var(--text-muted)" }}>scroll</span>

@@ -2,8 +2,8 @@ import { personal } from "../data/portfolio.js";
 import "../styles/about.css";
 
 const skills = [
-  { category: "Frontend", items: ["Next.js", "React 19", "TypeScript", "Vite", "CSS"] },
-  { category: "Backend", items: ["FastAPI", "Node.js", "PostgreSQL", "Supabase", "Prisma"] },
+  { category: "Frontend", items: ["Next.js", "React 19", "TypeScript", "Vite", "Tailwind CSS"] },
+  { category: "Backend", items: ["FastAPI", "Node.js", "PostgreSQL","Prisma"] },
   { category: "AI / ML", items: ["LangGraph", "LangChain", "OpenAI", "NVIDIA NIM", "ChromaDB"] },
   { category: "DevOps", items: ["Docker", "Git", "Vercel", "Railway", "GitHub Actions"] },
 ];
@@ -18,7 +18,7 @@ export default function About() {
         </div>
 
         <div className="about-grid">
-          {/* Left: Bio + quick facts */}
+
           <div className="about-left">
             <div className="about-intro">
               <p className="about-bio">
@@ -26,7 +26,7 @@ export default function About() {
                 focused on shipping production-grade AI-powered products and full-stack systems.
               </p>
               <p className="about-bio" style={{ marginTop: 14 }}>
-                I don't just study AI — I build with it. My work spans <strong>multi-agent pipelines</strong>,
+                I don't just study AI , I build with it. My work spans <strong>multi-agent pipelines</strong>,
                 <strong> real-time data systems</strong>, and <strong>SaaS platforms</strong> with complex
                 multi-tenancy requirements. Every project is designed for scale from day one.
               </p>
@@ -36,7 +36,7 @@ export default function About() {
               {[
                 { icon: "🎓", label: "Education", value: "B.Tech CSE @ SOA University (2023–2027)" },
                 { icon: "🏢", label: "Internship", value: "ML Engineer @ GNCIPL" },
-                { icon: "📜", label: "Certification", value: "IIT Madras" },
+                { icon: "📜", label: "Certification", value: "IITM Pravartak" },
                 { icon: "📍", label: "Location", value: "Bhubaneswar, Odisha, India" },
                 { icon: "🔧", label: "Currently", value: personal.currentlyBuilding },
               ].map((f, i) => (
@@ -51,7 +51,6 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right: Skills */}
           <div className="about-right">
             <div className="skills-panel">
               <div className="skills-header">

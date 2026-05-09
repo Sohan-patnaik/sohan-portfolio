@@ -14,7 +14,7 @@ import "./styles/global.css";
 export default function App() {
   const { theme, toggle: toggleTheme } = useTheme();
   const { open: paletteOpen, setOpen: setPaletteOpen } = useCommandPalette();
-  const [activePage, setActivePage] = useState("home"); // "home" | "casestudy"
+  const [activePage, setActivePage] = useState("home");
   const [activeProject, setActiveProject] = useState(null);
 
   const navigate = useCallback((target) => {

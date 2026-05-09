@@ -49,7 +49,6 @@ export default function ArchDiagram({ project, active }) {
   const W = 720;
   const H = 380;
 
-  // Spawn particles along active edges
   useEffect(() => {
     if (!active) return;
     let id = 0;
@@ -76,7 +75,6 @@ export default function ArchDiagram({ project, active }) {
         preserveAspectRatio="xMidYMid meet"
         style={{ width: "100%", height: "100%", maxHeight: 280 }}
       >
-        {/* Edge lines */}
         {flows.map(([from, to], i) => {
           const pFrom = positions[from];
           const pTo = positions[to];
@@ -96,12 +94,10 @@ export default function ArchDiagram({ project, active }) {
           );
         })}
 
-        {/* Animated particles */}
         {particles.map((p) => (
           <AnimatedParticle key={p.id} from={p.from} to={p.to} color={heroColor} />
         ))}
 
-        {/* Nodes */}
         {nodes.map((label, i) => {
           const pos = positions[i];
           if (!pos) return null;
@@ -154,7 +150,7 @@ export default function ArchDiagram({ project, active }) {
               >
                 {label.length > 14 ? label.slice(0, 13) + "…" : label}
               </text>
-              {/* Active pulse ring */}
+
               {active && isCentral && (
                 <circle
                   cx={pos.x}

@@ -4,11 +4,11 @@ export const personal = {
   tagline: "Building intelligent systems that scale.",
   location: "Bhubaneswar, India",
   bio: "3rd-year CSE @ SOA University. I design and ship production-grade AI-powered products — from multi-agent pipelines to full-stack SaaS platforms.",
-  currentlyBuilding: "fintech-ai — LangGraph multi-agent financial copilot",
+  currentlyBuilding: "Fintech-ai — LangGraph multi-agent financial copilot",
   deploymentStatus: "operational",
   links: {
     github: "https://github.com/Sohan-patnaik",
-    linkedin: "https://www.linkedin.com/in/sohan-patnaik-1bba87295/",
+    linkedin: "https://www.linkedin.com/in/sohan-patnaik-1bba87295",
     email: "sohanpatnaik9@gmail.com",
   },
   typingPhrases: [
@@ -100,9 +100,9 @@ export const projects = [
       "Optimistic UI updates on Kanban with server reconciliation.",
     ],
     timeline: [
-      { version: "v1", label: "Prototype", desc: "Manual WhatsApp + spreadsheet CRM", date: "Sep 2024" },
-      { version: "v2", label: "AI Layer", desc: "OpenAI integration + auto-scoring", date: "Oct 2024" },
-      { version: "v3", label: "Multi-Tenant", desc: "Supabase RLS + full Kanban dashboard", date: "Nov 2024" },
+      { version: "v1", label: "Prototype", desc: "Manual WhatsApp + spreadsheet CRM", date: "Sep 2025" },
+      { version: "v2", label: "AI Layer", desc: "OpenAI integration + auto-scoring", date: "Oct 2025" },
+      { version: "v3", label: "Multi-Tenant", desc: "Supabase RLS + full Kanban dashboard", date: "Nov 2025" },
     ],
     terminalSteps: [
       "$ booting EstateFlow AI...",
@@ -147,9 +147,9 @@ export const projects = [
       "Evaluator agent re-runs the fix against test cases before accepting.",
     ],
     timeline: [
-      { version: "v1", label: "Single Agent", desc: "LLM with raw error message input", date: "Aug 2024" },
-      { version: "v2", label: "RAG Pipeline", desc: "ChromaDB + NVIDIA embeddings", date: "Sep 2024" },
-      { version: "v3", label: "Multi-Agent", desc: "LangGraph DAG + evaluation loop", date: "Oct 2024" },
+      { version: "v1", label: "Single Agent", desc: "LLM with raw error message input", date: "Feb 2026" },
+      { version: "v2", label: "RAG Pipeline", desc: "ChromaDB + NVIDIA embeddings", date: "Mar 2026" },
+      { version: "v3", label: "Multi-Agent", desc: "LangGraph DAG + evaluation loop", date: "Mar 2026" },
     ],
     terminalSteps: [
       "$ debug-buddy init...",

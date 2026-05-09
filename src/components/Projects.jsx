@@ -23,10 +23,9 @@ function ProjectCard({ project, onClick }) {
       role="button"
       aria-label={`View ${project.title} case study`}
     >
-      {/* Glow border overlay */}
+
       <div className="card-glow-border" />
 
-      {/* Top row */}
       <div className="card-top">
         <div className="card-meta">
           <span className="mono" style={{ fontSize: 10, color: "var(--text-muted)" }}>
@@ -45,7 +44,6 @@ function ProjectCard({ project, onClick }) {
         </div>
       </div>
 
-      {/* Title block */}
       <div className="card-title-block">
         <div className="card-icon" style={{ color: project.heroColor }}>
           <ProjectIcon id={project.id} />
@@ -54,15 +52,12 @@ function ProjectCard({ project, onClick }) {
         <p className="card-subtitle">{project.subtitle}</p>
       </div>
 
-      {/* Description */}
       <p className="card-desc">{project.shortDesc}</p>
 
-      {/* Mini architecture flow (shown on hover) */}
       <div className={`card-arch ${hovered ? "visible" : ""}`}>
         <MiniFlow nodes={project.architecture.nodes.slice(0, 4)} heroColor={project.heroColor} active={hovered} />
       </div>
 
-      {/* Metrics */}
       <div className="card-metrics">
         {project.metrics.slice(0, 3).map((m) => (
           <div key={m.label} className="card-metric">
@@ -72,7 +67,6 @@ function ProjectCard({ project, onClick }) {
         ))}
       </div>
 
-      {/* Tech badges */}
       <div className="card-tech">
         {project.tech.slice(0, 4).map((t, i) => (
           <span
@@ -93,7 +87,6 @@ function ProjectCard({ project, onClick }) {
         )}
       </div>
 
-      {/* CTA */}
       <div className="card-footer">
         <span className="card-cta mono" style={{ color: project.heroColor }}>
           View Case Study →

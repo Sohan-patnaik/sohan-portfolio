@@ -1,5 +1,3 @@
-
-
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -14,7 +12,6 @@ export default function ContactForm() {
   const [status, setStatus] = useState(STATUS.IDLE);
   const [errors, setErrors] = useState({});
 
-  /* ── Validation ── */
   function validate(data) {
     const e = {};
     if (!data.from_name.trim())  e.from_name  = "Name is required.";
@@ -25,7 +22,6 @@ export default function ContactForm() {
     return e;
   }
 
-  /* ── Submit ── */
   async function handleSubmit(e) {
     e.preventDefault();
     const form = formRef.current;
@@ -69,7 +65,6 @@ export default function ContactForm() {
           </p>
         </div>
 
-        {/* Card */}
         <div style={styles.card}>
           {status === STATUS.OK ? (
             <SuccessBanner onReset={() => setStatus(STATUS.IDLE)} />
@@ -131,8 +126,6 @@ export default function ContactForm() {
   );
 }
 
-/* ── Sub-components ─────────────────────────────────────────────────────────── */
-
 function Field({ label, name, as = "input", error, rows, ...rest }) {
   const [focused, setFocused] = useState(false);
   const Tag = as;
@@ -192,10 +185,6 @@ function Spinner() {
   );
 }
 
-/* ── Styles ──────────────────────────────────────────────────────────────────
-   Uses CSS custom properties so it inherits your existing theme vars.
-   Falls back to sensible values if the vars aren't defined.
-*/
 const styles = {
   section: {
     padding: "96px 24px",

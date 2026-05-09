@@ -23,7 +23,6 @@ export default function CaseStudy({ project, onBack }) {
 
   return (
     <div className="case-study" style={{ "--hero-color": project.heroColor }}>
-      {/* Back button */}
       <div className="cs-back container">
         <button className="back-btn" onClick={onBack}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -34,7 +33,6 @@ export default function CaseStudy({ project, onBack }) {
         </button>
       </div>
 
-      {/* ---- HERO ---- */}
       <section className="cs-hero">
         <div className="cs-hero-bg" />
         <div className="container cs-hero-content">
@@ -58,7 +56,6 @@ export default function CaseStudy({ project, onBack }) {
         </div>
       </section>
 
-      {/* ---- PROBLEM → SOLUTION → IMPACT ---- */}
       <section className="cs-section container">
         <div className="section-header">
           <p className="section-label">// Engineering Brief</p>
@@ -87,7 +84,6 @@ export default function CaseStudy({ project, onBack }) {
 
       <div className="divider container" />
 
-      {/* ---- ARCHITECTURE ---- */}
       <section className="cs-section container">
         <div className="section-header">
           <p className="section-label">// System Design</p>
@@ -105,7 +101,6 @@ export default function CaseStudy({ project, onBack }) {
 
       <div className="divider container" />
 
-      {/* ---- HOW I ENGINEERED THIS ---- */}
       <section className="cs-section container">
         <div className="section-header">
           <p className="section-label">// Engineering Notes</p>
@@ -123,7 +118,6 @@ export default function CaseStudy({ project, onBack }) {
 
       <div className="divider container" />
 
-      {/* ---- TERMINAL DEMO ---- */}
       <section className="cs-section container">
         <div className="section-header">
           <p className="section-label">// System Boot</p>
@@ -183,7 +177,6 @@ export default function CaseStudy({ project, onBack }) {
 
       <div className="divider container" />
 
-      {/* ---- TECH STACK ---- */}
       <section className="cs-section container">
         <div className="section-header">
           <p className="section-label">// Dependencies</p>
@@ -201,7 +194,6 @@ export default function CaseStudy({ project, onBack }) {
 
       <div className="divider container" />
 
-      {/* ---- BUILD TIMELINE ---- */}
       <section className="cs-section container">
         <div className="section-header">
           <p className="section-label">// Build History</p>
@@ -231,7 +223,6 @@ export default function CaseStudy({ project, onBack }) {
 
       <div className="divider container" />
 
-      {/* ---- ENGINEERING PRINCIPLES ---- */}
       <section className="cs-section container">
         <div className="section-header">
           <p className="section-label">// Design Philosophy</p>
@@ -249,7 +240,6 @@ export default function CaseStudy({ project, onBack }) {
         </div>
       </section>
 
-      {/* ---- FOOTER CTA ---- */}
       <section className="cs-footer-cta">
         <div className="container">
           <p className="mono" style={{ color: "var(--text-muted)", fontSize: 12, marginBottom: 8 }}>
