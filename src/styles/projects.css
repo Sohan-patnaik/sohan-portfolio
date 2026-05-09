@@ -1,0 +1,238 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* ---- PROJECT CARD ---- */
+.project-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  cursor: pointer;
+  transition: all var(--transition-slow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, var(--hero-color, transparent) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.project-card.hovered::before {
+  opacity: 0.04;
+}
+
+.project-card.hovered {
+  border-color: color-mix(in srgb, var(--hero-color) 30%, var(--border));
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--hero-color) 15%, transparent),
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    0 0 40px color-mix(in srgb, var(--hero-color) 8%, transparent);
+  transform: translateY(-2px);
+  background: var(--bg-card-hover);
+}
+
+.card-glow-border {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--hero-color) 20%, transparent), transparent 50%);
+}
+
+.project-card.hovered .card-glow-border {
+  opacity: 1;
+}
+
+/* ---- TOP ROW ---- */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/* ---- TITLE BLOCK ---- */
+.card-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-icon {
+  margin-bottom: 4px;
+  opacity: 0.8;
+  transition: opacity var(--transition);
+}
+
+.project-card.hovered .card-icon {
+  opacity: 1;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.card-subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* ---- DESCRIPTION ---- */
+.card-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ---- MINI ARCH FLOW ---- */
+.card-arch {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all var(--transition-slow);
+}
+
+.card-arch.visible {
+  opacity: 1;
+  max-height: 60px;
+}
+
+.mini-flow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px;
+  background: rgba(0,0,0,0.15);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.mini-flow-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.mini-node {
+  padding: 3px 7px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all var(--transition);
+}
+
+.mini-node.active {
+  background: rgba(0,0,0,0.2);
+}
+
+.mini-arrow {
+  flex-shrink: 0;
+}
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+}
+
+/* ---- METRICS ---- */
+.card-metrics {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.card-metric-val {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.card-metric-lbl {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ---- TECH BADGES ---- */
+.card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ---- FOOTER ---- */
+.card-footer {
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.card-cta {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.project-card.hovered .card-cta {
+  opacity: 1;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
