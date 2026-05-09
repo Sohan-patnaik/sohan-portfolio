@@ -122,7 +122,7 @@ export const projects = [
     title: "Debug Buddy",
     subtitle: "AI-Powered Python Debugging CLI",
     status: "live",
-    year: "2024",
+    year: "2026",
     category: "Developer Tools / AI",
     shortDesc: "LangGraph multi-agent CLI that retrieves relevant docs, analyzes bugs, generates fixes, evaluates them, and refines — all autonomously.",
     heroColor: "#f59e0b",
