@@ -178,10 +178,9 @@ export default function Projects({ onViewProject }) {
     <section className="projects section" id="projects">
       <div className="container">
         <div className="section-header">
-          <p className="section-label">// Engineering Portfolio</p>
           <h2 className="section-title">Production Systems</h2>
           <p className="section-sub">
-            AI-powered products, full-stack systems, and developer tools — built to production standards.
+            AI-powered products, full-stack systems, and developer tools built to production standards.
           </p>
         </div>
 

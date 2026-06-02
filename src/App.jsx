@@ -9,6 +9,7 @@ import Footer from "./components/Footer.jsx";
 import CommandPalette from "./components/CommandPalette.jsx";
 import CaseStudy from "./pages/CaseStudy.jsx";
 import ContactForm from "./components/ContactForm.jsx";
+import OpenToRoles from "./components/OpenToRoles.jsx";
 import "./styles/global.css";
 
 export default function App() {
@@ -79,9 +80,11 @@ export default function App() {
         onViewProject={viewProject}
       />
 
+
       {activePage === "home" && (
         <main>
           <Hero onNavigate={navigate} />
+          <OpenToRoles/>
           <Projects onViewProject={viewProject} />
           <About />
           <ContactForm/>

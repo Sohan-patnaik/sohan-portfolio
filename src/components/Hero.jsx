@@ -88,7 +88,7 @@ export default function Hero({ onNavigate }) {
           </div>
           <div className="hero-stat-divider" />
           <div className="hero-stat">
-            <span className="hero-stat-val mono">3rd Year</span>
+            <span className="hero-stat-val mono">4th Year</span>
             <span className="hero-stat-lbl">CSE @ SOA</span>
           </div>
           <div className="hero-stat-divider" />

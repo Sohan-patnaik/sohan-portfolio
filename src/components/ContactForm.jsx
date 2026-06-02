@@ -75,14 +75,14 @@ export default function ContactForm() {
                   label="Name"
                   name="from_name"
                   type="text"
-                  placeholder="Jane Smith"
+                  placeholder="Your Name"
                   error={errors.from_name}
                 />
                 <Field
                   label="Email"
                   name="from_email"
                   type="email"
-                  placeholder="jane@example.com"
+                  placeholder="yourgmail@example.com"
                   error={errors.from_email}
                 />
               </div>
