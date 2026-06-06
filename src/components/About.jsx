@@ -54,16 +54,23 @@ export default function About() {
             <div className="about-facts">
               {[
                 {
-                  icon: "🎓",
-                  label: "Education",
-                  value: "B.Tech CSE @ SOA University (2023–2027)",
+                  icon: "🏆",
+                  label: "Certification",
+                  value: "AI / ML Certified",
+                  issuer: "IITM Pravartak",
+                  link: "/DSA00380_4.pdf",
+                  featured: true,
                 },
                 {
                   icon: "🏢",
                   label: "Internship",
                   value: "ML Engineer @ GNCIPL",
                 },
-                { icon: "📜", label: "Certification", value: "IITM Pravartak" },
+                {
+                  icon: "🎓",
+                  label: "Education",
+                  value: "B.Tech CSE @ SOA University (2023–2027)",
+                },
                 {
                   icon: "📍",
                   label: "Location",
@@ -71,15 +78,37 @@ export default function About() {
                 },
                 {
                   icon: "🔧",
-                  label: "Currently",
+                  label: "Currently Building",
                   value: personal.currentlyBuilding,
                 },
               ].map((f, i) => (
-                <div key={i} className="about-fact">
+                <div
+                  key={i}
+                  className={`about-fact ${f.featured ? "featured-cert" : ""}`}
+                >
                   <span className="fact-icon">{f.icon}</span>
-                  <div>
+
+                  <div className="fact-content">
                     <div className="fact-label mono">{f.label}</div>
+
                     <div className="fact-value">{f.value}</div>
+
+                    {f.issuer && (
+                      <>
+                        <div className="fact-issuer">
+                          ✓ Verified by {f.issuer}
+                        </div>
+
+                        <a
+                          href={f.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="credential-link"
+                        >
+                          View Credential →
+                        </a>
+                      </>
+                    )}
                   </div>
                 </div>
               ))}
