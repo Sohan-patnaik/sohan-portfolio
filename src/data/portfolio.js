@@ -11,6 +11,7 @@ export const personal = {
     github: "https://github.com/Sohan-patnaik",
     linkedin: "https://www.linkedin.com/in/sohan-patnaik-1bba87295",
     email: "sohanpatnaik9@gmail.com",
+    resume: "https://drive.google.com/file/d/1iUU32CZ5Gi57NKVa8N28IbOMwbi55v2b/view?usp=sharing",
   },
   typingPhrases: [
     "Building AI-Powered Products.",
@@ -22,28 +23,145 @@ export const personal = {
 
 export const projects = [
   {
+    id: "agentops-sdk",
+    title: "AgentOps SDK",
+    subtitle: "Open-Source LLM Observability & Evaluation SDK",
+    status: "live",
+    year: "2026",
+    category: "Developer Tools / AI Infrastructure",
+    githubUrl: "https://github.com/sohan-patnaik/agentops",
+    demoUrl: "https://pypi.org/project/agentops-sdk/",
+
+    shortDesc:
+      "Published lightweight Python SDK on PyPI for real-time latency tracing, token cost accounting, and response evaluation, backed by an auto-scaling FastAPI service running inside Docker containers on AWS EC2.",
+
+    heroColor: "#3b82f6",
+
+    tech: [
+      "Python",
+      "FastAPI",
+      "OpenTelemetry",
+      "Docker",
+      "AWS EC2",
+      "PyPI",
+      "REST API",
+      "LangChain",
+      "Heuristic Evaluation",
+    ],
+
+    metrics: [
+      { label: "SDK APIs", value: "3 (Monitor, Eval, Report)" },
+      { label: "Deployment", value: "Docker / AWS EC2" },
+      { label: "Package", value: "PyPI Published" },
+      { label: "Scale", value: "10k req/min load-tested" },
+    ],
+
+    architecture: {
+      nodes: [
+        "Developer App",
+        "AgentOps SDK",
+        "OpenTelemetry",
+        "Docker Container",
+        "FastAPI Backend",
+        "Evaluation Engine",
+        "Reporting Engine",
+      ],
+      flows: [
+        [0, 1],
+        [1, 2],
+        [2, 3],
+        [3, 4],
+        [4, 5],
+        [4, 6],
+        [5, 6],
+      ],
+    },
+
+    problem:
+      "Developers building LLM applications often lack a lightweight, developer-friendly way to monitor latency, token usage, response quality, and generate evaluation reports without building custom observability tooling.",
+
+    solution:
+      "Built and published an open-source Python SDK that exposes simple monitor(), evaluate(), and report() APIs. The SDK automatically instruments LLM requests using OpenTelemetry, evaluates responses with heuristic metrics, and communicates with a FastAPI backend for centralized processing and reporting.",
+
+    impact:
+      "Reduced the effort required to add LLM observability from dozens of lines of custom instrumentation to three simple SDK calls, providing a foundation for production-ready monitoring and evaluation workflows.",
+
+    engineeringNotes: [
+      "Designed a modular client-server SDK architecture separating core instrumentation, heuristics evaluation, and backend reporting.",
+      "Integrated OpenTelemetry-native tracing to automatically monitor asynchronous LLM API calls, request latency, and token distributions.",
+      "Implemented automatic response normalization for LangChain AIMessage objects.",
+      "Developed heuristic-based faithfulness and relevance evaluators running asynchronously on client runtimes.",
+      "Containerized the FastAPI backend using Docker for stateless, horizontal scaling on AWS EC2.",
+      "Built a REST-based SDK ↔ Backend communication layer to keep client applications lightweight.",
+    ],
+
+    timeline: [
+      {
+        version: "v0.1.0",
+        label: "MVP Release",
+        desc: "Published SDK on PyPI with monitoring, evaluation and reporting APIs.",
+        date: "July 2026",
+      },
+      {
+        version: "v0.2",
+        label: "Observability",
+        desc: "OpenTelemetry instrumentation and modular evaluation engine.",
+        date: "Upcoming",
+      },
+      {
+        version: "v1.0",
+        label: "Production Platform",
+        desc: "RAGAS integration, persistent storage, dashboard and multi-provider support.",
+        date: "Planned",
+      },
+    ],
+
+    terminalSteps: [
+      "$ pip install agentops",
+      "$ importing AgentOps...",
+      "$ sdk initialized ✓",
+      "$ monitor() → OpenTelemetry tracing enabled",
+      "$ evaluate() → heuristic evaluator ready",
+      "$ report() → backend aggregation enabled",
+      "$ FastAPI backend → connected",
+      "$ AWS EC2 endpoint → healthy ✓",
+      "$ AgentOps SDK ready.",
+    ],
+
+    principles: [
+      "Developer-first API design",
+      "Modular SDK architecture",
+      "OpenTelemetry-native instrumentation",
+      "Extensible evaluation pipeline",
+      "Lightweight client, backend-powered processing",
+    ],
+  },
+  {
     id: "fintech-ai",
     title: "FinTech AI Copilot",
     subtitle: "Multi-Agent Financial Intelligence Platform",
     status: "live",
     year: "2026",
     category: "AI / FinTech",
+    githubUrl: "https://github.com/sohan-patnaik/fintech-ai",
+    demoUrl: "https://fincopilot-ai.vercel.app",
     shortDesc:
-      "LangGraph orchestrated multi-agent system for real-time market analysis, portfolio optimization, and AI-driven investment decisions.",
+      "Production-ready multi-agent AI system utilizing LangGraph DAG workflows for real-time market data retrieval, sentiment analysis, and risk scoring in under 800ms, deployed in containerized environments.",
     heroColor: "#00ff87",
     tech: [
       "FastAPI",
       "LangGraph",
+      "Docker",
       "Next.js",
       "Supabase",
-      "Yahoo Finance",
       "PostgreSQL",
+      "Yahoo Finance",
     ],
     metrics: [
-      { label: "Agents", value: "5" },
-      { label: "Latency", value: "<800ms" },
-      { label: "Data Sources", value: "5+" },
-      { label: "API Calls/Day", value: "10+" },
+      { label: "DAG Nodes", value: "5 Specialized Agents" },
+      { label: "Avg Latency", value: "<800ms (Parallel)" },
+      { label: "DB Security", value: "Supabase RLS Policies" },
+      { label: "Environments", value: "Docker Containerized" },
     ],
     architecture: {
       nodes: [
@@ -54,8 +172,8 @@ export const projects = [
         "NewsAnalysisAgent",
         "FundamentalAgent",
         "DecisionAgent",
-        "Supabase",
-        "Yahoo Finance",
+        "Supabase DB (RLS)",
+        "Yahoo Finance API",
       ],
       flows: [
         [0, 1],
@@ -77,10 +195,11 @@ export const projects = [
     impact:
       "Unified financial intelligence in a single conversational interface, cutting research time from hours to seconds.",
     engineeringNotes: [
-      "Designed a RouterAgent that classifies user intent and dispatches to the right sub-agent with context injection.",
-      "Built async fan-out execution for parallel agent runs — MarketData + News fetched simultaneously.",
-      "Supabase RLS policies enforce per-user portfolio isolation at the DB layer.",
-      "Implemented streaming SSE from FastAPI to deliver real-time agent thoughts to the UI.",
+      "Orchestrated a 5-node agent network using LangGraph state graphs with conditional routing and self-correction loops.",
+      "Implemented async parallel execution (asyncio.gather) to concurrently fetch market fundamentals and sentiment data, reducing total latency by 45%.",
+      "Secured Postgres data layers using Supabase Row-Level Security (RLS) policies to isolate user portfolio records.",
+      "Designed a high-throughput streaming backend returning FastAPI Server-Sent Events (SSE) for real-time agent reasoning step visualization.",
+      "Containerized backend workflows with Docker to ensure environmental parity between staging and production.",
     ],
     timeline: [
       {
@@ -124,7 +243,118 @@ export const projects = [
       "Streaming UX for perceived speed",
     ],
   },
+  {
+    id: "howyouthink",
+    title: "CustomGPT Studio",
+    subtitle: "AI Chatbot SaaS Platform",
+    status: "live",
+    year: "2025",
+    category: "AI SaaS",
+    githubUrl: "https://github.com/sohan-patnaik/howyouthink",
+    demoUrl: "https://trainmybot.vercel.app",
+    shortDesc:
+      "A scalable multi-tenant SaaS platform allowing businesses to train and deploy custom chatbots using YAML documents, featuring low-latency fuzzy matching, PostgreSQL storage, and real-time analytics.",
 
+    heroColor: "#8b5cf6",
+
+    tech: [
+      "Next.js",
+      "Flask",
+      "Supabase",
+      "Clerk",
+      "PostgreSQL",
+      "RapidFuzz",
+      "Docker",
+    ],
+
+    metrics: [
+      { label: "Tenancy", value: "Multi-Tenant (Isolated)" },
+      { label: "Matching Latency", value: "<15ms (RapidFuzz Engine)" },
+      { label: "Authentication", value: "Clerk JWT Middleware" },
+      { label: "Containers", value: "Multi-stage Docker builds" },
+    ],
+
+    architecture: {
+      nodes: [
+        "Browser",
+        "Next.js Frontend",
+        "Clerk Auth",
+        "Flask API",
+        "Supabase DB",
+        "Supabase Storage",
+        "Analytics Dashboard",
+      ],
+
+      flows: [
+        [0, 1],
+        [1, 2],
+        [1, 3],
+        [3, 4],
+        [3, 5],
+        [1, 6],
+        [5, 7],
+      ],
+    },
+
+    problem:
+      "Most chatbot builders are either overly complex or lack personalization. Users need a simple way to create custom AI chatbots trained on their own structured data.",
+
+    solution:
+      "Built a multi-tenant chatbot SaaS platform where users can upload YAML training datasets, create custom bots, and interact through a real-time chat interface powered by intelligent fuzzy matching.",
+
+    impact:
+      "Demonstrated production-level SaaS engineering skills including authentication, multi-tenant architecture, file storage pipelines, analytics tracking, and scalable chatbot interaction systems.",
+
+    engineeringNotes: [
+      "Designed tenant-isolated chatbot architecture using Supabase row-level separation.",
+      "Implemented RapidFuzz-powered semantic response matching for low-latency chatbot replies under 15ms.",
+      "Integrated Clerk authentication with protected dashboard routing and session management.",
+      "Built analytics pipeline to log and visualize user-bot interactions and performance trends.",
+      "Used multi-stage Docker builds to package both the Next.js frontend and Python API into minimal footprint production images.",
+    ],
+
+    timeline: [
+      {
+        version: "v1",
+        label: "Core Platform",
+        desc: "Authentication, chatbot creation, basic dashboard",
+        date: "Jan 2025",
+      },
+
+      {
+        version: "v2",
+        label: "Training System",
+        desc: "YAML uploads, storage integration, response engine",
+        date: "Feb 2025",
+      },
+
+      {
+        version: "v3",
+        label: "Analytics + UX",
+        desc: "Real-time chat UI, analytics dashboard, performance improvements",
+        date: "Mar 2025",
+      },
+    ],
+
+    terminalSteps: [
+      "$ CustomGPT Studio booting...",
+      "$ fastapi backend → initialized ✓",
+      "$ supabase → connected (multi-tenant storage)",
+      "$ pdf parser + text chunker → ready",
+      "$ NVIDIA NIM embeddings → loaded",
+      "$ faiss vector index → built ✓",
+      "$ bm25 keyword engine → optimized (hybrid retrieval)",
+      "$ langchain rag pipeline → assembled",
+      "$ /create-bot + /chat endpoints → live",
+      "$ CustomGPT is ready. Upload a PDF, deploy your bot.",
+    ],
+    principles: [
+      "Multi-tenant SaaS architecture",
+      "Low-latency AI interactions",
+      "Scalable backend design",
+      "Developer-focused UX",
+    ],
+  },
   {
     id: "debug-buddy",
     title: "Debug Buddy",
@@ -132,22 +362,25 @@ export const projects = [
     status: "live",
     year: "2026",
     category: "Developer Tools / AI",
+    githubUrl: "https://github.com/sohan-patnaik/debug-buddy",
+    demoUrl: "",
     shortDesc:
-      "LangGraph multi-agent CLI that retrieves relevant docs, analyzes bugs, generates fixes, evaluates them, and refines — all autonomously.",
+      "Command-line agentic tool running a 5-stage LangGraph execution loop to locate stack traces, semantic search vector stores, and autonomously generate score-evaluated diffs in secure sandboxes.",
     heroColor: "#f59e0b",
     tech: [
       "Python",
       "LangGraph",
+      "Docker",
       "NVIDIA Embeddings",
       "ChromaDB",
       "FastAPI",
       "LLM Streaming",
     ],
     metrics: [
-      { label: "Pipeline Stages", value: "5" },
-      { label: "Fix Accuracy", value: "87%" },
-      { label: "Avg Fix Time", value: "<5s" },
-      { label: "Vector Store", value: "Chroma" },
+      { label: "Execution Loop", value: "5-Stage Self-Correction" },
+      { label: "Fix Accuracy", value: "87% (on 100+ bugs)" },
+      { label: "Vector Store", value: "Chroma / NVIDIA Embeddings" },
+      { label: "Sandbox Runtime", value: "Docker Isolated" },
     ],
     architecture: {
       nodes: [
@@ -175,10 +408,11 @@ export const projects = [
     impact:
       "Developers get contextually accurate fixes in under 5 seconds, grounded in real documentation.",
     engineeringNotes: [
+      "Orchestrated a self-evaluating debugging agent utilizing LangGraph DAG loops to retry code fixes guided by feedback scores.",
       "Chroma collection caching avoids repeated embedding computation — 10x startup speedup.",
       "Parallel fan-out: retrieval and bug pattern matching run concurrently via LangGraph.",
       "Pydantic schemas enforce structured outputs between agent handoffs.",
-      "Evaluator agent re-runs the fix against test cases before accepting.",
+      "Built Docker images containing isolated runtime sandboxes for safe local execution of LLM-generated code fixes.",
     ],
     timeline: [
       {
@@ -220,209 +454,6 @@ export const projects = [
       "Pipeline evaluation loops",
       "Caching for performance",
       "Schema-validated agent handoffs",
-    ],
-  },
-  {
-    id: "howyouthink",
-    title: "HowYouThink",
-    subtitle: "AI Chatbot SaaS Platform",
-    status: "live",
-    year: "2025",
-    category: "AI SaaS",
-    shortDesc:
-      "Multi-tenant AI chatbot platform enabling users to create, train, and manage personalized chatbots with real-time analytics, YAML-based training, and intelligent response matching.",
-
-    heroColor: "#8b5cf6",
-
-    tech: [
-      "Next.js",
-      "Flask",
-      "Supabase",
-      "Clerk",
-      "PostgreSQL",
-      "RapidFuzz",
-      "Tailwind CSS",
-    ],
-
-    metrics: [
-      { label: "Architecture", value: "Multi-Tenant" },
-      { label: "Auth", value: "Clerk" },
-      { label: "Training", value: "YAML Uploads" },
-      { label: "AI Matching", value: "Fuzzy Search" },
-    ],
-
-    architecture: {
-      nodes: [
-        "Browser",
-        "Next.js Frontend",
-        "Clerk Auth",
-        "Flask API",
-        "RapidFuzz Engine",
-        "Supabase DB",
-        "Supabase Storage",
-        "Analytics Dashboard",
-      ],
-
-      flows: [
-        [0, 1],
-        [1, 2],
-        [1, 3],
-        [3, 4],
-        [3, 5],
-        [1, 6],
-        [5, 7],
-      ],
-    },
-
-    problem:
-      "Most chatbot builders are either overly complex or lack personalization. Users need a simple way to create custom AI chatbots trained on their own structured data.",
-
-    solution:
-      "Built a multi-tenant chatbot SaaS platform where users can upload YAML training datasets, create custom bots, and interact through a real-time chat interface powered by intelligent fuzzy matching.",
-
-    impact:
-      "Demonstrated production-level SaaS engineering skills including authentication, multi-tenant architecture, file storage pipelines, analytics tracking, and scalable chatbot interaction systems.",
-
-    engineeringNotes: [
-      "Designed tenant-isolated chatbot architecture using Supabase row-level separation.",
-      "Implemented RapidFuzz-powered semantic response matching for low-latency chatbot replies.",
-      "Integrated Clerk authentication with protected dashboard routing and session management.",
-      "Built analytics pipeline to log and visualize user-bot interactions and performance trends.",
-    ],
-
-    timeline: [
-      {
-        version: "v1",
-        label: "Core Platform",
-        desc: "Authentication, chatbot creation, basic dashboard",
-        date: "Jan 2025",
-      },
-
-      {
-        version: "v2",
-        label: "Training System",
-        desc: "YAML uploads, storage integration, response engine",
-        date: "Feb 2025",
-      },
-
-      {
-        version: "v3",
-        label: "Analytics + UX",
-        desc: "Real-time chat UI, analytics dashboard, performance improvements",
-        date: "Mar 2025",
-      },
-    ],
-
-    terminalSteps: [
-      "$ HowYouThink booting...",
-      "$ fastapi backend → initialized ✓",
-      "$ supabase → connected (multi-tenant storage)",
-      "$ pdf parser + text chunker → ready",
-      "$ NVIDIA NIM embeddings → loaded",
-      "$ faiss vector index → built ✓",
-      "$ bm25 keyword engine → optimized (hybrid retrieval)",
-      "$ langchain rag pipeline → assembled",
-      "$ /create-bot + /chat endpoints → live",
-      "$ Master AI is ready. Upload a PDF, deploy your bot.",
-    ],
-    principles: [
-      "Multi-tenant SaaS architecture",
-      "Low-latency AI interactions",
-      "Scalable backend design",
-      "Developer-focused UX",
-    ],
-  },
-  {
-    id: "estateflow",
-    title: "EstateFlow AI",
-    subtitle: "Multi-Tenant Real Estate SaaS with WhatsApp AI",
-    status: "building",
-    year: "2025",
-    category: "SaaS / AI",
-    shortDesc:
-      "Production-grade real estate SaaS with WhatsApp lead qualification, OpenAI-powered scoring, Supabase multi-tenancy, and a Kanban deal pipeline.",
-    heroColor: "#7c3aed",
-    tech: [
-      "Next.js",
-      "Supabase",
-      "OpenAI",
-      "WhatsApp API",
-      "PostgreSQL",
-      "Row-Level Security",
-    ],
-    metrics: [
-      { label: "Tenants", value: "Multi" },
-      { label: "Lead Score Accuracy", value: "91%" },
-      { label: "Response Time", value: "<2s" },
-      { label: "Pipeline Stages", value: "6" },
-    ],
-    architecture: {
-      nodes: [
-        "WhatsApp",
-        "Webhook Handler",
-        "OpenAI Qualifier",
-        "Lead Scorer",
-        "Supabase DB",
-        "Next.js Dashboard",
-        "Kanban Pipeline",
-      ],
-      flows: [
-        [0, 1],
-        [1, 2],
-        [2, 3],
-        [3, 4],
-        [4, 5],
-        [5, 6],
-      ],
-    },
-    problem:
-      "Real estate agencies lose 60% of WhatsApp leads due to slow follow-up and no automated qualification pipeline.",
-    solution:
-      "Automated WhatsApp-to-CRM pipeline: leads are qualified via OpenAI, scored, and pushed to a Kanban board — all within seconds of first contact.",
-    impact:
-      "Zero-touch lead triage. Agents only talk to qualified prospects. Conversion rate increases 3x.",
-    engineeringNotes: [
-      "Supabase RLS enforces strict tenant isolation — no cross-agency data leakage possible.",
-      "OpenAI prompt engineering for lead qualification returns structured JSON scores.",
-      "Webhook signature verification prevents spoofed WhatsApp payloads.",
-      "Optimistic UI updates on Kanban with server reconciliation.",
-    ],
-    timeline: [
-      {
-        version: "v1",
-        label: "Prototype",
-        desc: "Manual WhatsApp + spreadsheet CRM",
-        date: "June 2026",
-      },
-      {
-        version: "v2",
-        label: "AI Layer",
-        desc: "OpenAI integration + auto-scoring",
-        date: "Upcoming",
-      },
-      {
-        version: "v3",
-        label: "Multi-Tenant",
-        desc: "Supabase RLS + full Kanban dashboard",
-        date: "Upcoming",
-      },
-    ],
-    terminalSteps: [
-      "$ booting EstateFlow AI...",
-      "$ supabase → connecting (multi-tenant mode)...",
-      "$ RLS policies → loaded ✓",
-      "$ whatsapp webhook → registered ✓",
-      "$ openai qualifier → ready",
-      "$ lead scorer → calibrated ✓",
-      "$ kanban pipeline → 6 stages initialized",
-      "$ multi-tenant isolation → verified ✓",
-      "$ EstateFlow operational.",
-    ],
-    principles: [
-      "Multi-tenancy by default (RLS)",
-      "Fail-fast webhook validation",
-      "Structured AI outputs for reliability",
-      "Optimistic UI for responsiveness",
     ],
   },
 ];
@@ -469,3 +500,8 @@ export const openToRoles = {
   openToRelocation: true,
   openToRemote: true,
 };
+
+
+export const demo =[
+  {},{},{},{}
+]

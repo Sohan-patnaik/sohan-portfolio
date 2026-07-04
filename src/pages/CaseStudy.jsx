@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useTerminal } from "../hooks/index.js";
 import ArchDiagram from "../components/ArchDiagram.jsx";
+import { personal } from "../data/portfolio.js";
 import "../styles/casestudy.css";
 
 export default function CaseStudy({ project, onBack }) {
@@ -249,7 +250,7 @@ export default function CaseStudy({ project, onBack }) {
             Let's talk engineering.
           </h3>
           <a
-            href="mailto:sohan@example.com"
+            href={`mailto:${personal.links.email}`}
             className="btn btn-primary"
             style={{ fontSize: 14, padding: "12px 28px" }}
           >

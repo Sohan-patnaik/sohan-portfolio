@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { personal } from "../data/portfolio.js";
 import "../styles/navbar.css";
 
 export default function Navbar({ theme, onToggleTheme, onOpenPalette, onNavigate }) {
@@ -18,6 +19,7 @@ export default function Navbar({ theme, onToggleTheme, onOpenPalette, onNavigate
           <button onClick={() => onNavigate("projects")}>Projects</button>
           <button onClick={() => onNavigate("about")}>About</button>
           <button onClick={() => onNavigate("contact")}>Contact</button>
+          <a href={personal.links.resume} target="_blank" rel="noopener noreferrer" className="nav-resume-btn">Resume</a>
         </div>
 
         <div className="navbar-actions">
@@ -61,6 +63,7 @@ export default function Navbar({ theme, onToggleTheme, onOpenPalette, onNavigate
           <button onClick={() => { onNavigate("projects"); setMobileOpen(false); }}>Projects</button>
           <button onClick={() => { onNavigate("about"); setMobileOpen(false); }}>About</button>
           <a href="mailto:sohanpatnaik9@gmail.com">Contact</a>
+          <a href={personal.links.resume} target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)" }}>Resume</a>
         </div>
       )}
     </nav>
