@@ -29,7 +29,7 @@ export const projects = [
     status: "live",
     year: "2026",
     category: "Developer Tools / AI Infrastructure",
-    githubUrl: "https://github.com/sohan-patnaik/agentops",
+    githubUrl: "https://github.com/Sohan-patnaik/agent-ops",
     demoUrl: "https://pypi.org/project/agentops-sdk/",
 
     shortDesc:
@@ -143,7 +143,7 @@ export const projects = [
     status: "live",
     year: "2026",
     category: "AI / FinTech",
-    githubUrl: "https://github.com/sohan-patnaik/fintech-ai",
+    githubUrl: "https://github.com/Sohan-patnaik/ai-fintech",
     demoUrl: "https://fincopilot-ai.vercel.app",
     shortDesc:
       "Production-ready multi-agent AI system utilizing LangGraph DAG workflows for real-time market data retrieval, sentiment analysis, and risk scoring in under 800ms, deployed in containerized environments.",
@@ -250,7 +250,7 @@ export const projects = [
     status: "live",
     year: "2025",
     category: "AI SaaS",
-    githubUrl: "https://github.com/sohan-patnaik/howyouthink",
+    githubUrl: "https://github.com/Sohan-patnaik/HowYouThink",
     demoUrl: "https://trainmybot.vercel.app",
     shortDesc:
       "A scalable multi-tenant SaaS platform allowing businesses to train and deploy custom chatbots using YAML documents, featuring low-latency fuzzy matching, PostgreSQL storage, and real-time analytics.",
@@ -362,7 +362,7 @@ export const projects = [
     status: "live",
     year: "2026",
     category: "Developer Tools / AI",
-    githubUrl: "https://github.com/sohan-patnaik/debug-buddy",
+    githubUrl: "https://github.com/Sohan-patnaik/debug-buddy",
     demoUrl: "",
     shortDesc:
       "Command-line agentic tool running a 5-stage LangGraph execution loop to locate stack traces, semantic search vector stores, and autonomously generate score-evaluated diffs in secure sandboxes.",
