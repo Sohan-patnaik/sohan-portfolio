@@ -11,7 +11,7 @@ export const personal = {
     github: "https://github.com/Sohan-patnaik",
     linkedin: "https://www.linkedin.com/in/sohan-patnaik-1bba87295",
     email: "sohanpatnaik9@gmail.com",
-    resume: "https://drive.google.com/file/d/1iUU32CZ5Gi57NKVa8N28IbOMwbi55v2b/view?usp=sharing",
+    resume: "https://drive.google.com/file/d/1Mg-UxGNYuNJQmmgMFGAwmgTuY6VhqvfL/view?usp=sharing",
   },
   typingPhrases: [
     "Building AI-Powered Products.",
